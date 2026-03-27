@@ -13,22 +13,22 @@
 
 | 文件 | 语言 | 说明 |
 | :--- | :---: | :--- |
-| [jetbrains-ide.md](./skills/jetbrains-ide-skill/jetbrains-ide.md) | 中文 | OpenCode Agent 标准格式 |
-| [jetbrains-ide-en.md](./skills/jetbrains-ide-skill/jetbrains-ide-en.md) | English | OpenCode Agent standard format |
+| [SKILL_CN.md](./skills/jetbrains-ide-skill/SKILL_CN.md) | 中文 | OpenCode Agent 标准格式 |
+| [SKILL.md](./skills/jetbrains-ide-skill/SKILL.md) | English | OpenCode Agent standard format |
 
 ### 🔧 安装方式（OpenCode）
 
 ```bash
 # 全局安装（选择你偏好的语言版本）
-cp skills/jetbrains-ide-skill/jetbrains-ide.md ~/.config/opencode/agents/
+cp skills/jetbrains-ide-skill/SKILL_CN.md ~/.config/opencode/agents/jetbrains-ide.md
 # 或
-cp skills/jetbrains-ide-skill/jetbrains-ide-en.md ~/.config/opencode/agents/
+cp skills/jetbrains-ide-skill/SKILL.md ~/.config/opencode/agents/jetbrains-ide.md
 
 # 项目级安装
-cp skills/jetbrains-ide-skill/jetbrains-ide.md .opencode/agents/
+cp skills/jetbrains-ide-skill/SKILL_CN.md .opencode/agents/jetbrains-ide.md
 ```
 
-安装后可通过 `@jetbrains-ide` 或 `@jetbrains-ide-en` 手动调用，或由主 Agent 根据任务上下文自动触发。
+> 复制时建议重命名为 `jetbrains-ide.md`，安装后通过 `@jetbrains-ide` 调用。
 
 ### 💬 全局提示词 (System Prompt) 示例
 
