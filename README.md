@@ -9,26 +9,34 @@
 <details>
 <summary><b>JetBrains IDE 全维度集成技能</b> (jetbrains-ide-skill)</summary>
 
-- **SKILL 链接**: [jetbrains-ide-skill](./skills/jetbrains-ide-skill/SKILL_CN.md)
-
 针对 JetBrains 系列 IDE 的深度 MCP 适配，支持语义内省、精准重构与实时诊断。
 
-**全局提示词 (System Prompt)-OpenCode示例:**
+| 文件 | 语言 | 说明 |
+| :--- | :---: | :--- |
+| [jetbrains-ide.md](./skills/jetbrains-ide-skill/jetbrains-ide.md) | 中文 | OpenCode Agent 标准格式 |
+| [jetbrains-ide-en.md](./skills/jetbrains-ide-skill/jetbrains-ide-en.md) | English | OpenCode Agent standard format |
+
+### 🔧 安装方式（OpenCode）
+
+```bash
+# 全局安装（选择你偏好的语言版本）
+cp skills/jetbrains-ide-skill/jetbrains-ide.md ~/.config/opencode/agents/
+# 或
+cp skills/jetbrains-ide-skill/jetbrains-ide-en.md ~/.config/opencode/agents/
+
+# 项目级安装
+cp skills/jetbrains-ide-skill/jetbrains-ide.md .opencode/agents/
+```
+
+安装后可通过 `@jetbrains-ide` 或 `@jetbrains-ide-en` 手动调用，或由主 Agent 根据任务上下文自动触发。
+
+### 💬 全局提示词 (System Prompt) 示例
+
 ```text
-## IDE Expert Strategy (2026.1+)
-- **Active Detection**: 任务开始前必须检查 `jetbrains` 命名空间可用性。
-  - **若可用**：Codex 自动变身为“专家代理”，所有文件读写、重构、搜索必须优先调用 IDE MCP 接口，严禁绕过 IDE 进行裸文件操作。
-  - **若不可用**：切换至通用模式，并明确说明当前缺乏 IDE 语义支持。
-- **Context-First Logic**: 
-  - 修改前利用 `get_active_editor_context` 锁定用户焦点。
-  - 复杂项目强制通过 `get_project_modules` 解析 projectPath。
-- **Modify-Verify Loop (Hard Rule)**: 
-  - 任何代码写入后必须立即紧接 `get_file_problems`。若有错，Codex 必须通过 `get_symbol_info` 深度理解后自主修复，直至错误清零。
-  - 数据库相关操作（MyBatisPlus/Entity/SQL）强制调用 `get_database_schema` 进行表结构比对。
-- **Engineering Excellence**: 
-  - 大文件（>500行）强制使用滑动窗口（±50行）。
-  - 交付前执行 `reformat_file` 保持风格一致。
-  - 修改完毕后，调用 `open_file_in_editor` 将变更文件置于用户焦点。
+## JetBrains IDE Strategy
+任务开始前检测 `jetbrains` 命名空间：
+- **可用**：调用 @jetbrains-ide 按完整专家协议执行，禁止绕过 IDE 直接操作文件。
+- **不可用**：切换通用模式并告知用户。
 ```
 
 </details>
