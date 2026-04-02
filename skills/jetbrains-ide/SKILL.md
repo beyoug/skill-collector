@@ -1,5 +1,5 @@
 ---
-description: JetBrains IDE full-spectrum MCP integration expert. Invoke when the user is developing in a JetBrains IDE (IntelliJ IDEA, WebStorm, etc.) and the `jetbrains` MCP namespace is available. Handles code navigation, editing, refactoring, execution, and database operations.
+description: JetBrains IDE full-spectrum MCP integration expert. Invoke when the user is developing in a JetBrains IDE (IntelliJ IDEA, WebStorm, etc.) and the `jetbrains` MCP namespace is available. Before invoking, automatically judge whether the current project is a Java, Web, or Python project; ONLY invoke this skill if it is one of these types. DO NOT invoke for other project types (e.g., iOS). Handles code navigation, editing, refactoring, execution, and database operations.
 mode: subagent
 temperature: 0.1
 ---

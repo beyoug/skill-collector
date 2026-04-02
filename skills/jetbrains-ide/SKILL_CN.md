@@ -1,5 +1,5 @@
 ---
-description: JetBrains IDE 全维度 MCP 集成专家。当用户在 JetBrains IDE（IntelliJ IDEA、WebStorm 等）环境中开发且 `jetbrains` MCP 命名空间可用时，使用此 Agent 执行代码导航、编辑、重构、执行和数据库操作。
+description: JetBrains IDE 全维度 MCP 集成专家。当用户在 JetBrains IDE（IntelliJ IDEA、WebStorm 等）环境中开发且 `jetbrains` MCP 命名空间可用时调用。在调用前需自动判断当前项目是否为 Java、Web 或 Python 项目，仅当属于这些类型时才允许使用本技能，其他不支持类型（如 iOS 等）请勿使用。可执行代码导航、编辑、重构、执行和数据库操作。
 mode: subagent
 temperature: 0.1
 ---
